@@ -68,6 +68,17 @@ else
     exit 1
 fi
 
+# Install Claude flow
+print_header "Installing Claude Code flow"
+print_status "Fetching and installing ccflow..."
+if npm install -g @anthropic-ai/claude-code; then
+    print_success "claude code flow installed successfully!"
+else
+    print_error "Failed to install ccflow"
+    exit 1
+fi
+
+
 # Final message
 echo ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -77,5 +88,6 @@ echo -e "${BLUE}Available commands:${NC}"
 echo -e "  ${YELLOW}claude${NC}         - Launch Claude Code CLI"
 echo -e "  ${YELLOW}claude-router${NC}  - Launch Claude Code Router"
 echo -e "  ${YELLOW}ccusage${NC}        - View usage statistics"
+echo -e "  ${YELLOW}claude-flow${NC}        - View usage statistics"
 echo ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
